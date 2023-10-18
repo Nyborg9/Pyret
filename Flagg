@@ -1,0 +1,39 @@
+VRod1 = square(60, "solid", "red")
+VRod2 = square(60, "solid", "red")
+VHvit1 = rectangle(60, 10, "solid", "white")
+VHvit2 = rectangle(60, 10, "solid", "white")
+VBla = rectangle(60, 20, "solid", "blue")
+
+VMHvit1 = rectangle(10, 80, "solid", "white")
+VMHvit2 = rectangle(10, 80, "solid", "white")
+VMBla = rectangle(10, 20, "solid", "blue")
+
+Midt = rectangle(20, 200, "solid", "blue")
+
+RMHvit1 = rectangle(10, 80, "solid", "white")
+RMHvit2 = rectangle(10, 80, "solid", "white")
+RMBla = rectangle(10, 20, "solid", "blue")
+
+RRod1 = rectangle(120, 60, "solid", "red")
+RRod2 = rectangle(120, 60, "solid", "red")
+RHvit1 = rectangle(120, 10, "solid", "white")
+RHvit2 = rectangle(120, 10, "solid", "white")
+RBla = rectangle(120, 20, "solid", "blue")
+
+Vdel1 = above(above(VRod1, VHvit1), above(VHvit1,VBla))
+Vdel2 = above(above(VBla, VHvit2), above(VHvit2,VRod2))
+Venstre = above(Vdel1, Vdel2)
+
+VMdel = above(above(VMHvit1, VMBla), above(VMBla,VMHvit2))
+
+
+RMdel = above(above(RMHvit1, RMBla), above(RMBla,RMHvit2))
+
+Rdel1 = above(above(RRod1, RHvit1), above(RHvit1,RBla))
+Rdel2 = above(above(RBla, RHvit2), above(RHvit2,RRod2))
+Hoyre = above(Rdel1, Rdel2)
+
+
+Del1 = beside(beside(Venstre, VMdel), beside(VMdel, Midt))
+Del2 = beside(beside(Midt, RMdel), beside(RMdel, Hoyre))
+beside(Del1, Del2)
